@@ -1,0 +1,202 @@
+$color: rgb(27, 27, 27);
+#wrapper h1 {
+	display: inline-block;
+  text-align: start;
+  
+}
+
+@mixin glitchCopy { 
+		content: attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+}
+
+.glitchS {
+	position: relative;
+  display: inline-block;
+	color: white;
+}
+.velChillLi {
+    &::before{
+        @include glitchCopy;
+        clip: rect(44px, 450px, 56px, 0);
+        background-color: rgb(27, 27, 27);
+        animation: glitch-animli 5s infinite linear alternate-reverse;
+        left: 1px;
+        text-shadow: -1px 0 #a3027b;
+	}
+    
+	&::after {
+        @include glitchCopy;
+        background-color: rgb(27, 27, 27);
+        animation: glitch-animli2 8s infinite linear alternate-reverse;
+        left: -1px;
+        text-shadow: 1px 1px #0041a8;
+	}
+}
+.standBy:hover {
+  &::before{
+    @include glitchCopy;
+    clip: rect(44px, 450px, 56px, 0);
+    background-color: rgb(27, 27, 27);
+    animation: glitch-animli .5s infinite linear alternate-reverse;
+    left: 3px;
+    text-shadow: -2px 0 #a3027b;
+  }
+
+  &::after {
+    @include glitchCopy;
+    background-color: rgb(27, 27, 27);
+    animation: glitch-animli2 .5s infinite linear alternate-reverse;
+    left: -3px;
+    text-shadow: 2px 2px #0041a8;
+  }
+}
+.vel3Li {
+  &::before{
+        @include glitchCopy;
+        clip: rect(44px, 450px, 56px, 0);
+        background-color: rgb(27, 27, 27);
+        animation: glitch-animli 1s infinite linear alternate-reverse;
+        left: 3px;
+        text-shadow: -2px 0 #a3027b;
+	}
+    
+	&::after {
+        @include glitchCopy;
+        background-color: rgb(27, 27, 27);
+        animation: glitch-animli2 2s infinite linear alternate-reverse;
+        left: -3px;
+        text-shadow: 2px 2px #0041a8;
+	}
+}
+.velChill {
+    &::before{
+        @include glitchCopy;
+        clip: rect(44px, 450px, 56px, 0);
+        background-color: $color;
+        animation: glitch-anim 10s infinite linear alternate-reverse;
+        left: 3px;
+        text-shadow: -2px 0 #a3027b;
+	}
+    
+	&::after {
+        @include glitchCopy;
+        background-color: $color;
+        animation: glitch-anim2 12s infinite linear alternate-reverse;
+        left: -3px;
+        text-shadow: 2px 2px #0041a8;
+	}
+}
+.velChill:hover{
+    &::before{
+        @include glitchCopy;
+        clip: rect(44px, 450px, 56px, 0);
+        background-color: $color;
+        animation: glitch-anim 1s infinite linear alternate-reverse;
+        left: 8px;
+        text-shadow: -5px 0 #a3027b;
+	}
+    
+	&::after {
+        @include glitchCopy;
+        background-color: $color;
+        animation: glitch-anim2 1s infinite linear alternate-reverse;
+        left: -8px;
+        text-shadow: 5px 2px #0041a8;
+	}
+}
+.vel1 {
+    &::before{
+        @include glitchCopy;
+        clip: rect(44px, 450px, 56px, 0);
+        background-color: $color;
+        animation: glitch-anim 3s infinite linear alternate-reverse;
+        left: 3px;
+        text-shadow: -2px 0 #a3027b;
+	}
+    
+	&::after {
+        @include glitchCopy;
+        background-color: $color;
+        animation: glitch-anim2 2s infinite linear alternate-reverse;
+        left: -3px;
+        text-shadow: 2px 2px #0041a8;
+	}
+}
+.vel2 {
+    &::before{
+        @include glitchCopy;
+        clip: rect(44px, 450px, 56px, 0);
+        background-color: $color;
+        animation: glitch-anim 2s infinite linear alternate-reverse;
+        left: 3px;
+        text-shadow: -2px 0 #a3027b;
+	}
+    
+	&::after {
+        @include glitchCopy;
+        background-color: $color;
+        animation: glitch-anim2 1s infinite linear alternate-reverse;
+        left: -3px;
+        text-shadow: 2px 2px #0041a8;
+	}
+}
+.vel3 {
+    &::before{
+        @include glitchCopy;
+        clip: rect(44px, 450px, 56px, 0);
+        background-color: $color;
+        animation: glitch-anim 1s infinite linear alternate-reverse;
+        left: 5px;
+        text-shadow: -2px 0 #a3027b;
+	}
+    
+	&::after {
+      @include glitchCopy;
+      background-color: $color;
+      animation: glitch-anim2 1s infinite linear alternate-reverse;
+      left: -5px;
+      text-shadow: 2px 2px #0041a8;
+	}
+}
+
+@keyframes glitch-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(200)+px, 9999px, random(300)+px, 0);
+    }
+  }
+}
+
+@keyframes glitch-anim2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(200)+px, 9999px, random(300)+px, 0);
+    }
+  }
+}
+
+@keyframes glitch-animli {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(30)+px, 9999px, random(30)+px, 0);
+      }
+    }
+  }
+  
+  // Same deal, just duplicated for ultra randomness.
+  @keyframes glitch-animli2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(30)+px, 9999px, random(30)+px, 0);
+      }
+    }
+  }
